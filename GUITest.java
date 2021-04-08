@@ -70,10 +70,10 @@ private JTextField textField;
 		cookbook = new CookBook();
 		
 		try {
-			UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");//windows- favorite!
+			//UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");//windows- favorite!
 			//UIManager.setLookAndFeel("com.sun.java.swing.plaf.motif.MotifLookAndFeel");//Motif Style Really Ugly
 			//UIManager.setLookAndFeel("javax.swing.plaf.metal.MetalLookAndFeel");//Java
-			//for (LookAndFeelInfo info : UIManager.getInstalledLookAndFeels()) {if ("Nimbus".equals(info.getName())) {UIManager.setLookAndFeel(info.getClassName());}}//Nimbus Style
+			for (LookAndFeelInfo info : UIManager.getInstalledLookAndFeels()) {if ("Nimbus".equals(info.getName())) {UIManager.setLookAndFeel(info.getClassName());}}//Nimbus Style
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -392,44 +392,10 @@ private JTextField textField;
 		Tabbed_Pane_New_Recipe.add(lblNewLabel_position_recipe);
 
 		JDesktopPane TabbedPane_Edit_recipe = new JDesktopPane();
-		TabbedPane_Edit_recipe.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				tempRecipe=new Recipe();
-				instructiontextfield.setText("");
-				textField_positioninstruction.setText("");
-				textField_amount.setText("");
-				textField_unit_new.setText("");
-				textField_ingredient_name_new.setText("");
-				textField_ingred_position.setText("");
-				textField_recipe_position.setText("");
-				textPane_NewRecipePreview.setText("");
-				textPane_1.setText(cookbook.displayList());
-				repaint();
-				
-			}
-		});
+
 		TabbedPane_Edit_recipe.setBackground(Color.WHITE);
 		tabbedPane.addTab("Edit Recipe", null, TabbedPane_Edit_recipe, null);
 
-		Tabbed_Pane_New_Recipe.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				tempRecipe=null;
-				instructiontextfield.setText("");
-				textField_positioninstruction.setText("");
-				textField_amount.setText("");
-				textField_unit_new.setText("");
-				textField_ingredient_name_new.setText("");
-				textField_ingred_position.setText("");
-				textField_recipe_position.setText("");
-				textPane_NewRecipePreview.setText("");
-				textPane_1.setText(cookbook.displayList());
-				repaint();
-				
-			}
-		});
-		
 		amount_TextField = new JTextField();
 		amount_TextField.setColumns(10);
 		amount_TextField.setBounds(10, 65, 86, 20);
@@ -486,6 +452,7 @@ private JTextField textField;
 				}else {
 					textPane.setText("Error No recipe found?");
 				}
+				repaint();
 			}
 		});
 		btnNewButton_Add_Ingredient_At_top.setBounds(10, 96, 139, 23);
@@ -524,7 +491,7 @@ private JTextField textField;
 				}else {
 					textPane.setText("Error No recipe found?");
 				}
-				
+				repaint();
 			}
 		});
 		btnNewButton_Set_New_Name.setBounds(385, 316, 115, 23);
@@ -562,6 +529,7 @@ private JTextField textField;
 				}else {
 					textPane.setText("Error No recipe found?");
 				}
+				repaint();
 			}
 		});
 		btnNewButton_Add_ingredient_at_bottom.setBounds(159, 96, 159, 23);
@@ -581,6 +549,7 @@ private JTextField textField;
 				}else {
 					textPane.setText("Error No recipe found?");
 				}
+				repaint();
 			}
 		});
 		btnNewButton_add_ingredient_at_position.setBounds(328, 96, 172, 23);
@@ -605,6 +574,7 @@ private JTextField textField;
 					textField_Instructions.setText("");
 					textField_instruction_position.setText("");
 					textPane.setText(tempRecipe.displayRecipe());
+					repaint();
 			}
 		});
 		btnAddInstructionAt_Top.setBounds(10, 231, 150, 23);
@@ -622,6 +592,7 @@ private JTextField textField;
 				}else {
 					textPane.setText("Error No recipe found?");
 				}
+				repaint();
 			}
 		});
 		btnAddInstructionAt_Bottom.setBounds(170, 231, 159, 23);
@@ -639,6 +610,7 @@ private JTextField textField;
 				}else {
 					textPane.setText("Error No recipe found?");
 				}
+				repaint();
 			}
 		});
 		btnAddInstructionAt_Position.setBounds(338, 231, 162, 23);
@@ -661,6 +633,7 @@ private JTextField textField;
 				}else {
 					textPane.setText("Error No recipe found?");
 				}
+				repaint();
 			}
 		});
 		btnNewButton_remove_ingredient.setBounds(301, 130, 199, 23);
@@ -677,6 +650,7 @@ private JTextField textField;
 				}else {
 					textPane.setText("Error No recipe found?");
 				}
+				repaint();
 			}
 		});
 		btnNewButton_remove_instruction.setBounds(301, 265, 199, 23);
@@ -703,6 +677,7 @@ private JTextField textField;
 				location =Integer.parseInt(textField_8.getText())-1;
 				tempRecipe=cookbook.findRecipePublic(location);
 				textPane.setText(tempRecipe.displayRecipe());
+				repaint();
 			}
 		});
 		btnNewButton_7.setBounds(385, 6, 115, 23);
@@ -733,6 +708,10 @@ private JTextField textField;
 				cookbook.deleteRecipe(location);
 				cookbook.addRecipeAtPosition(tempRecipe, location);
 				textField_8.setText("");
+				textPane.setText("");
+				textPane_1.setText(cookbook.displayList());
+				repaint();
+				
 			}
 		});
 		btnNewButton_8.setBounds(411, 350, 89, 23);
@@ -755,6 +734,7 @@ private JTextField textField;
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				textPane_2.setText(cookbook.findRecipePublic(Integer.parseInt(textField.getText())-1).displayRecipe());
+				repaint();
 			}
 		});
 		btnNewButton_7_1.setBounds(385, 11, 115, 23);
