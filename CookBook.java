@@ -21,15 +21,21 @@ public class CookBook {
 	}//End of constructor
 
 	/**
+	 * updates A Recipe to The Recipe Box
+	 * @param Recipe <code>newRecipe</code>
+	 * @param int location
+	 */
+	public void updateRecipe(Recipe newRecipe, int location) {
+		this.deleteRecipe(location);
+		this.addRecipeAtPosition(newRecipe, location);
+	}//ending bracket of addRecipe
+	
+	/**
 	 * Adds A Recipe to The Recipe Box
 	 * @param Recipe <code>newRecipe</code>
 	 */
 	public String addRecipeAtHead(Recipe newRecipe) {
-		if(findRecipe(newRecipe.getName())==-1) {
-			this.recipe.addAtHead(newRecipe);
-			return "Succesful";
-		}else { return null;
-		}
+		return addRecipe(newRecipe, 0);
 	}//ending bracket of addRecipe
 
 	/**
@@ -37,11 +43,7 @@ public class CookBook {
 	 * @param Recipe <code>newRecipe</code>
 	 */
 	public String addRecipeAtTail(Recipe newRecipe) {
-		if(findRecipe(newRecipe.getName())==-1) {
-			this.recipe.addAtTail(newRecipe);
-			return "Succesful";
-		}else { return null;
-		}
+		return addRecipe(newRecipe, this.recipe.size());
 	}//ending bracket of addRecipe
 
 	/**
@@ -50,13 +52,21 @@ public class CookBook {
 	 * @param int location
 	 */
 	public String addRecipeAtPosition(Recipe newRecipe, int location) {
-		if(findRecipe(newRecipe.getName())==-1) {
+		return addRecipe(newRecipe, location);
+	}//ending bracket of addRecipe
+
+	/**
+	 * Adds A Recipe to The Recipe Box at position
+	 * @param Recipe <code>newRecipe</code>
+	 * @param int location
+	 */
+	private String addRecipe(Recipe newRecipe, int location) {
+		if(findRecipeLocation(newRecipe.getName())==-1) {
 			this.recipe.add(newRecipe,location-1);
 			return "Succesful";
 		}else { return null;
 		}
 	}//ending bracket of addRecipe
-
 
 	/**
 	 * Deletes A Recipe from The Recipe Box
@@ -65,8 +75,6 @@ public class CookBook {
 	public void deleteRecipe(int location) {
 		this.recipe.remove(location);
 	}//ending bracket of deleteRecipe
-
-
 
 	/**
 	 * @return String of recipe names
@@ -84,7 +92,7 @@ public class CookBook {
 	 * @param searchString to search for recipe
 	 * @return Recipe that was found
 	 */
-	public Recipe findRecipePublic(int i) {
+	public Recipe getRecipe(int i) {
 		return recipe.getDataAtPosition(i);
 	}//ending bracket of findRecipePublic
 
@@ -92,7 +100,7 @@ public class CookBook {
 	 * @param searchString to search for recipe
 	 * @return Recipe that was found
 	 */
-	public Recipe findRecipePublic(String searchString) {
+	public Recipe findRecipe(String searchString) {
 		Recipe temp = null;
 		for(int i=0; i<this.recipe.size(); i++) {
 			if(this.recipe.getDataAtPosition(i).getName().equalsIgnoreCase(searchString)) {
@@ -108,7 +116,7 @@ public class CookBook {
 	 * @param <code>searchString</code> the name of the Recipe to look up the record of
 	 * @return int location of recipe
 	 */
-	public int findRecipe(String searchString) {
+	public int findRecipeLocation(String searchString) {
 		int temp = -1;
 		for(int i=0; i<this.recipe.size(); i++) {
 			if(this.recipe.getDataAtPosition(i).getName().equalsIgnoreCase(searchString)) {
@@ -119,4 +127,4 @@ public class CookBook {
 		return temp;
 	}// Ending bracket of method findGame
 
-}
+}//end of class

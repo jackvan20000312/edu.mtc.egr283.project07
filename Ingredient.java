@@ -27,7 +27,7 @@ public class Ingredient {
 	}//ending bracket of setIngredient
 	
 	/**
-	 * gets ingreient
+	 * gets ingredient
 	 * @return String <code>ingredient</code>
 	 */
 	public String getIngredient() {

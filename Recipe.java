@@ -31,29 +31,17 @@ public class Recipe {
 	 * @return String
 	 */
 	public String addRecipeIngredient(String ingredient, String unit, int quantity) {
-		for(int i=0; i<this.ingredients.size(); i++) {
-			if(this.ingredients.getDataAtPosition(i).equals(new RecipeIngredient(ingredient, unit, quantity))) {
-				return "Error, Tried adding duplicate ingredient";
-			}//end of if
-		}//edn of for
-		this.ingredients.addAtTail(new RecipeIngredient(ingredient, unit, quantity));
-		return "";
+		return addRecipeIngredientAtTail(new RecipeIngredient(ingredient, unit, quantity));
 	}//ending bracket of addRecipeIngredient
-	
+
 	/**
 	 * addRecipeIngredient
 	 * @param RecipeIngredient sad
 	 * @param int location
 	 * @return String
 	 */
-	public String addRecipeIngredient(RecipeIngredient sad, int location) {
-		for(int i=0; i<this.ingredients.size(); i++) {
-			if(this.ingredients.getDataAtPosition(i).equals(sad)) {
-				return "Error, Tried adding duplicate ingredient";
-			}//end of if
-		}//end of for
-		this.ingredients.add(sad, location);
-		return "";
+	public String addRecipeIngredient(RecipeIngredient ri, int location) {
+		return addRecipeIngredients(ri, location);
 	}//ending bracket of addShoppingItem
 
 	/**
@@ -62,37 +50,42 @@ public class Recipe {
 	 * @return String
 	 */
 	public String addRecipeIngredientAtTail(RecipeIngredient ri) {
-		for(int i=0; i<this.ingredients.size(); i++) {
-			if(this.ingredients.getDataAtPosition(i).equals(ri)) {
-				return "Error, Tried adding duplicate ingredient";
-			}//end of if
-		}//end of for
-		this.ingredients.addAtTail(ri);
-		return "";
+		return addRecipeIngredients(ri, this.ingredients.size());
 	}//ending bracket of addRecipeIngredientAtHead
-	
+
 	/**
 	 * add Recipe Ingredient At Head
 	 * @param RecipeIngredient ri
 	 * @return String
 	 */
 	public String addRecipeIngredientAtHead(RecipeIngredient ri) {
+		return addRecipeIngredients(ri, 0);
+	}//ending bracket of addRecipeIngredientAtHead
+	
+	/**
+	 * addRecipeIngredient
+	 * @param RecipeIngredient ri
+	 * @param int location
+	 * @return String
+	 */
+	private String addRecipeIngredients(RecipeIngredient ri, int location) {
 		for(int i=0; i<this.ingredients.size(); i++) {
 			if(this.ingredients.getDataAtPosition(i).equals(ri)) {
 				return "Error, Tried adding duplicate ingredient";
 			}//end of if
 		}//end of for
-		this.ingredients.addAtHead(ri);
+		this.ingredients.add(ri, location);
 		return "";
-	}//ending bracket of addRecipeIngredientAtHead
-	
+	}//ending bracket of addShoppingItem
+
+
 	/**
 	 * remove Recipe Ingredient
 	 * @param String <code>name</code>
 	 */
 	public void removeRecipeIngredient(String name) {
 		for(int i=0; i<this.ingredients.size(); i++) {
-			if(this.ingredients.getDataAtPosition(i).getIngredient().getIngredient().equalsIgnoreCase(name)) {
+			if(this.ingredients.getDataAtPosition(i).getIngredientName().getIngredient().equalsIgnoreCase(name)) {
 				this.ingredients.remove(i);
 				break;
 			}//end of if
@@ -106,7 +99,7 @@ public class Recipe {
 	public void removeRecipeIngredient(int location) {
 		this.ingredients.remove(location);
 	}//ending bracket of removeRecipeIngredient
-	
+
 	/**
 	 * adds instruction at tail
 	 * @param String <code>name</code>
@@ -114,7 +107,7 @@ public class Recipe {
 	public void addInstructionAtTail(Instruction name) {
 		this.instructions.addAtTail(name);
 	}//ending bracket of addInstructionAtTail
-	
+
 	/**
 	 * adds instruction at position
 	 * @param Instruction <code>name</code>
@@ -123,7 +116,7 @@ public class Recipe {
 	public void addInstructionAtPosition(Instruction name, int location) {
 		this.instructions.add(name,location);
 	}//ending bracket of addInstructionAtPosition
-	
+
 	/**
 	 * adds instruction at head
 	 * @param Instruction <code>name</code>
@@ -181,7 +174,7 @@ public class Recipe {
 		}//end of for
 		return sb.toString();
 	}//end of displayIngredients
-	
+
 	/**
 	 * Displays recipe
 	 * @return String

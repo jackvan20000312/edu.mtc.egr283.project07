@@ -24,7 +24,19 @@ public class RecipeIngredient {
 		this.unit=new Unit(unit);
 		this.quantity=quantity;
 	}// Ending bracket of the constructor
-
+	
+	/**
+	 * Constructor.
+	 * Initialize the variables.
+	 * @param String <code>unit</code>
+	 * @param Double <code>quantity</code>
+	 * @param String <code>Ingredient</code>
+	 */
+	public RecipeIngredient() {
+		this.ingredient=null;
+		this.unit=null;
+		this.quantity=0;
+	}// Ending bracket of the constructor
 	
 	/**
 	 * Sets Quantity
@@ -47,14 +59,14 @@ public class RecipeIngredient {
 	 * @param String <code>Ingredient</code>
 	 */
 	public void setIngredient(String ingredient) {
-		this.ingredient.setIngredient(ingredient);
+		this.ingredient=new Ingredient(ingredient);
 	}//ending bracket of addShoppingItem
 	
 	/**
 	 * Gets Ingredient
 	 * @return Ingredient <code>Ingredient</code>
 	 */
-	public Ingredient getIngredient() {
+	public Ingredient getIngredientName() {
 		return this.ingredient;
 	}//ending bracket of addShoppingItem
 
@@ -63,7 +75,8 @@ public class RecipeIngredient {
 	 * @param String <code>name</code>
 	 */
 	public void setUnit(String name) {
-		this.unit.setUnit(name);
+		
+		this.unit=new Unit(name);
 	}//ending bracket of addShoppingItem
 	
 	/**
