@@ -41,4 +41,11 @@ public class Ingredient {
 	public String toString() {
 		return this.name;
 	}// Ending bracket of method toString
+	/**
+	 * Usual <code>toFile</code> method.
+	 * @return the <code>String</code> value of the file.
+	 */
+	public String toFile() {
+		return "<name>"+this.name+"</name>";
+	}// Ending bracket of method toString
 }//ending bracket of class

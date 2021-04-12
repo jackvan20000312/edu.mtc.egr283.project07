@@ -35,4 +35,13 @@ public class Unit {
 		return this.name;
 	}// Ending bracket of method toString
 	
+	/**
+	 * Usual <code>toFile</code> method.
+	 * @return the <code>String</code> value of the file.
+	 */
+	public String toFile() {
+		return "<unit>"+this.name+"</unit>";
+	}// Ending bracket of method toString
+	
+	
 }//ending bracket of class

@@ -21,6 +21,7 @@ import javax.swing.UIManager.LookAndFeelInfo;
 import javax.swing.JScrollPane;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.io.File;
 
 public class CookBookGUI extends JFrame {
 
@@ -55,6 +56,7 @@ private JTextField textField;
 				try {
 					CookBookGUI frame = new CookBookGUI();
 					frame.setVisible(true);
+					
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -68,12 +70,23 @@ private JTextField textField;
 	public CookBookGUI() {
 		tempRecipe=new Recipe();
 		cookbook = new CookBook();
+		File file = new File("XMLFile1.xml");
+		File fil = new File("XMLFile.xml");
+		cookbook=RecipeFile.read(fil);
+		RecipeFile.write(fil, cookbook);
 		
 		try {
-			UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");//windows- favorite!
+			//UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");//windows- favorite!
+			//UIManager.setLookAndFeel("com.jtattoo.plaf.smart.SmartLookAndFeel");
+			
 			//UIManager.setLookAndFeel("com.sun.java.swing.plaf.motif.MotifLookAndFeel");//Motif Style Really Ugly
 			//UIManager.setLookAndFeel("javax.swing.plaf.metal.MetalLookAndFeel");//Java
-			//for (LookAndFeelInfo info : UIManager.getInstalledLookAndFeels()) {if ("Nimbus".equals(info.getName())) {UIManager.setLookAndFeel(info.getClassName());}}//Nimbus Style
+			UIManager.put("nimbusBase", Color.BLUE.darker().darker().darker());
+			UIManager.put("nimbusBlueGrey", Color.BLACK);
+			UIManager.put("control", Color.DARK_GRAY);
+			UIManager.put("text", Color.ORANGE);
+			UIManager.put("nimbusLightBackground", Color.DARK_GRAY.brighter());
+			for (LookAndFeelInfo info : UIManager.getInstalledLookAndFeels()) {if ("Nimbus".equals(info.getName())) {UIManager.setLookAndFeel(info.getClassName());}}//Nimbus Style
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -108,7 +121,7 @@ private JTextField textField;
 		JTextPane textPane_1 = new JTextPane();
 		textPane_1.setEditable(false);
 		scrollPane_2.setViewportView(textPane_1);
-
+		textPane_1.setText(cookbook.displayList());
 
 		JScrollPane scrollPane_NewRecipePreview = new JScrollPane();
 		scrollPane_NewRecipePreview.setBounds(10, 281, 490, 251);

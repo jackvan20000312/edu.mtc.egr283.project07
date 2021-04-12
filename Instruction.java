@@ -41,4 +41,11 @@ public class Instruction {
 	public String toString() {
 		return this.instruction;
 	}// Ending bracket of method toString
+	/**
+	 * Usual <code>toString</code> method.
+	 * @return the <code>String</code> value of the file.
+	 */
+	public String toFile() {
+		return "<Instruction>"+this.instruction+"</Instruction>";
+	}// Ending bracket of method toString
 }//ending bracket of class

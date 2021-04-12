@@ -94,5 +94,18 @@ public class RecipeIngredient {
 	public String toString() {
 		return this.quantity+" "+this.unit.toString()+" "+this.ingredient.toString();
 	}// Ending bracket of method toString
+	/**
+	 * Usual <code>toFile</code> method.
+	 * @return the <code>String</code> value of the file.
+	 */
+	public String toFile() {
+		StringBuffer sb = new StringBuffer();
+		sb.append("<Ingredient>\n");
+		sb.append("<amount>"+this.quantity+"</amount>\n");
+		sb.append(this.unit.toFile()+"\n");
+		sb.append(this.ingredient.toFile()+"\n");
+		sb.append("</Ingredient>\n");
+		return sb.toString();
+	}// Ending bracket of method toString
 
 }//ending bracket of class

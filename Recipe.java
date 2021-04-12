@@ -186,5 +186,23 @@ public class Recipe {
 		sb.append("Directions: \n"+displayInstructions()+"\n");
 		return sb.toString();
 	}//end of displayRecipe
+	
+	/**
+	 * Displays recipe
+	 * @return String
+	 */
+	public String toFile() {
+		StringBuffer sb = new StringBuffer();
+		sb.append("<Recipe>\n");
+		sb.append("<RecipeName>"+getName()+"</RecipeName>"+"\n");
+		for(int i=0; i<this.ingredients.size(); i++) {
+			sb.append(this.ingredients.getDataAtPosition(i).toFile()+"\n");
+		}//end of for
+		for(int i=0; i<this.instructions.size(); i++) {
+			sb.append(this.instructions.getDataAtPosition(i).toFile()+"\n");
+		}//end of for
+		sb.append("</Recipe>");
+		return sb.toString();
+	}//end of displayRecipe
 
 }//end of class

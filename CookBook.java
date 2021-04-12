@@ -27,7 +27,7 @@ public class CookBook {
 	 */
 	public void updateRecipe(Recipe newRecipe, int location) {
 		this.deleteRecipe(location);
-		this.addRecipeAtPosition(newRecipe, location);
+		this.addRecipeAtPosition(newRecipe, location+1);
 	}//ending bracket of addRecipe
 	
 	/**
@@ -43,7 +43,7 @@ public class CookBook {
 	 * @param Recipe <code>newRecipe</code>
 	 */
 	public String addRecipeAtTail(Recipe newRecipe) {
-		return addRecipe(newRecipe, this.recipe.size());
+		return addRecipe(newRecipe, this.recipe.size()+1);
 	}//ending bracket of addRecipe
 
 	/**
@@ -87,6 +87,16 @@ public class CookBook {
 		}//Ending of for
 		return sb.toString();
 	}//emning bracket of method displayList
+	
+	public String toFile() {
+		StringBuffer sb = new StringBuffer();
+		sb.append("<RecipeBox>\n\n");
+		for(int i=0; i<this.recipe.size(); i++) {
+			sb.append(recipe.getDataAtPosition(i).toFile()+"\n\n");
+		}//Ending of for
+		sb.append("</RecipeBox>");
+		return sb.toString();
+	}
 
 	/**
 	 * @param searchString to search for recipe
