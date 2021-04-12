@@ -1,0 +1,176 @@
+<RecipeBox>
+	<Recipe>
+ 		<RecipeName>Family Grits</RecipeName>
+		
+		<Ingredient>
+			<unit>tablespoons</unit>
+			<amount>2</amount>
+			<name>Salted Butter</name>
+		</Ingredient>
+<Ingredient>
+			<unit>cups</unit>
+			<amount>1</amount>
+			<name>Quick-Cooking Grits</name>
+		</Ingredient>
+<Ingredient>
+			<unit>teaspoon</unit>
+			<amount>1</amount>
+			<name>Salt</name>
+		</Ingredient>
+<Ingredient>
+			<unit>pounds</unit>
+			<amount>0.25</amount>
+			<name>Jimmy Dean hot sausage (ground)</name>
+		</Ingredient>
+<Ingredient>
+			<unit>slices</unit>
+			<amount>3</amount>
+			<name>cheddar cheese</name>
+		</Ingredient>
+<Instruction>Add 4 cups of water and 1 teaspoon of salt to a pot and bring to a boil.</Instruction>
+<Instruction>Slowly add and stir in 1 cup of grits with a wooden spoon. It's important to stir well to prevent clumping.</Instruction>
+<Instruction>Reduce the heat and let simmer. The grits are done when the desired consistency is achieved.</Instruction>
+<Instruction>While the grits cook, use a pan and cook the sausage until it browns.</Instruction>
+<Instruction>Drain the grease from the sausage, then add the sausage to the grits. Stir.</Instruction>
+<Instruction>Stir in butter and cheese and simmer.</Instruction>
+<Instruction>Serve in bowls.</Instruction>
+	</Recipe>
+
+	<Recipe>
+ 		<RecipeName>Chocolate Chip Cookies</RecipeName>
+		
+		<Ingredient>
+			<unit>cup</unit>
+			<amount>1</amount>
+			<name>salted butter softened</name>
+		</Ingredient>
+		<Ingredient>
+			<unit>cup</unit>
+			<amount>1</amount>
+			<name>white (granulated) sugar</name>
+		</Ingredient>
+		<Ingredient>
+			<unit>cup</unit>
+			<amount>1</amount>
+			<name>light brown sugar packed</name>
+		</Ingredient>
+		<Ingredient>
+			<unit>tsp</unit>
+			<amount>2</amount>
+			<name>pure vanilla extract</name>
+		</Ingredient>
+		<Ingredient>
+			<unit>large</unit>
+			<amount>2</amount>
+			<name>eggs</name>
+		</Ingredient>
+		<Ingredient>
+			<unit>cups</unit>
+			<amount>3</amount>
+			<name>all-purpose flour</name>
+		</Ingredient>
+		<Ingredient>
+			<unit>tsp</unit>
+			<amount>1</amount>
+			<name>baking soda</name>
+		</Ingredient>
+		<Ingredient>
+			<unit>tsp</unit>
+			<amount>0.5</amount>
+			<name>baking powder</name>
+		</Ingredient>
+		<Ingredient>
+			<unit>tsp</unit>
+			<amount>1</amount>
+			<name>sea salt</name>
+		</Ingredient>
+		<Ingredient>
+			<unit>cups</unit>
+			<amount>2</amount>
+			<name>chocolate chips (or chunks, or chopped chocolate)</name>
+		</Ingredient>
+
+		<Instruction>Preheat oven to 375 degrees F. Line a baking pan with parchment paper and set aside.</Instruction>
+<Instruction>In a separate bowl mix flour, baking soda, salt, baking powder. Set aside.</Instruction>
+<Instruction>Cream together butter and sugars until combined.</Instruction>
+<Instruction>Beat in eggs and vanilla until fluffy.</Instruction>
+<Instruction>Mix in the dry ingredients until combined.</Instruction>
+<Instruction>Add 12 oz package of chocolate chips and mix well.</Instruction>
+<Instruction>Roll 2-3 TBS (depending on how large you like your cookies) of dough at a time into balls and place them evenly spaced on your prepared cookie sheets. (alternately, use a small cookie scoop to make your cookies).</Instruction>
+<Instruction>Bake in preheated oven for approximately 8-10 minutes. Take them out when they are just barely starting to turn brown.</Instruction>
+<Instruction>Let them sit on the baking pan for 2 minutes before removing to cooling rack.</Instruction>
+	</Recipe>
+
+<Recipe>
+ 		<RecipeName>My Special Ramen Noodles</RecipeName>
+		
+		<Ingredient>
+			<unit>small stove pot</unit>
+			<amount>0.25</amount>
+			<name>Water</name>
+		</Ingredient>
+		<Ingredient>
+			<unit>drops</unit>
+			<amount>3</amount>
+			<name>tamarind paste</name>
+		</Ingredient>
+		<Ingredient>
+			<unit>drops</unit>
+			<amount>1</amount>
+			<name>Mad Dog 357 hot sauce</name>
+		</Ingredient>
+		<Ingredient>
+			<unit>tablespoons</unit>
+			<amount>2</amount>
+			<name>dried minced onions</name>
+		</Ingredient>
+		<Ingredient>
+			<unit>dashes</unit>
+			<amount>2</amount>
+			<name>paprika</name>
+		</Ingredient>
+		<Ingredient>
+			<unit>dash</unit>
+			<amount>1</amount>
+			<name>chives</name>
+		</Ingredient>
+		<Ingredient>
+			<unit>dash</unit>
+			<amount>1</amount>
+			<name>ground thyme</name>
+		</Ingredient>
+		<Ingredient>
+			<unit>dash</unit>
+			<amount>1</amount>
+			<name>basil</name>
+		</Ingredient>
+		<Ingredient>
+			<unit>dash</unit>
+			<amount>0.5</amount>
+			<name>garlic</name>
+		</Ingredient>
+		<Ingredient>
+			<unit>tablespoons</unit>
+			<amount>2</amount>
+			<name>sesame seeds</name>
+		</Ingredient>
+		<Ingredient>
+			<unit>Large</unit>
+			<amount>1</amount>
+			<name>Egg</name>
+		</Ingredient>
+		<Ingredient>
+			<unit>package</unit>
+			<amount>1</amount>
+			<name>beef instant ramen noodles (1 square of ramen and 1 packet of beef seasoning)</name>
+		</Ingredient>
+
+<Instruction>Place all ingredients except for the egg, sesame seeds, and noodles into a pot of water.</Instruction>
+<Instruction>Stir ingredients in pot and heat it on low for 2 minutes.</Instruction>
+<Instruction>Crack egg into a bowl and put sesame seeds into a bowl.</Instruction>
+<Instruction>Put the square of ramen noodles into the pot and change the heat level to high.</Instruction>
+<Instruction>While the noodles are cooking, beat the egg yolk in the bowl really well (sesame seeds help break up the egg yolk).</Instruction>
+<Instruction>When the noodles become stringy, break them up, and dump everything from the pot into a bowl.</Instruction>
+<Instruction> Stir everything in the bowl so the egg yolk is evenly distributed throughout. The yolk cooks almost instantly.</Instruction>
+	</Recipe>
+</RecipeBox>
