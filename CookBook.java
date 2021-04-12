@@ -136,5 +136,16 @@ public class CookBook {
 		}//ending of for
 		return temp;
 	}// Ending bracket of method findGame
+	
+	/**
+	 * This is a linear search.
+	 * @param <code>searchString</code> the name of the Recipe to look up the record of
+	 * @return int location of recipe
+	 */
+	public int size() {
+		return recipe.size();
+	}// Ending bracket of method findGame
+	
+	
 
 }//end of class
