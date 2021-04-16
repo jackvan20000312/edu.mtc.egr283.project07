@@ -197,4 +197,82 @@
 <Instruction> Stir everything in the bowl so the egg yolk is evenly distributed throughout. The yolk cooks almost instantly.</Instruction>
 </Recipe>
 
+<Recipe>
+<RecipeName>Pumpkin Raisin Nut Cake</RecipeName>
+<Ingredient>
+<amount>2.0</amount>
+<unit>cups</unit>
+<name>Granulated Sugar</name>
+</Ingredient>
+
+<Ingredient>
+<amount>1.0</amount>
+<unit>Cup</unit>
+<name>Vegetable Oil</name>
+</Ingredient>
+
+<Ingredient>
+<amount>2.0</amount>
+<unit>Large</unit>
+<name>Eggs</name>
+</Ingredient>
+
+<Ingredient>
+<amount>2.0</amount>
+<unit>Cups</unit>
+<name>Self-Rising Flour</name>
+</Ingredient>
+
+<Ingredient>
+<amount>2.0</amount>
+<unit>tsp.</unit>
+<name>Ground Cinnamon</name>
+</Ingredient>
+
+<Ingredient>
+<amount>0.5</amount>
+<unit>tsp</unit>
+<name>Ground Nutmeg</name>
+</Ingredient>
+
+<Ingredient>
+<amount>1.0</amount>
+<unit>15 oz. can</unit>
+<name>Pumpkin</name>
+</Ingredient>
+
+<Ingredient>
+<amount>0.75</amount>
+<unit>cup</unit>
+<name>Raisins</name>
+</Ingredient>
+
+<Ingredient>
+<amount>1.5</amount>
+<unit>cups</unit>
+<name>Chopped Pecans</name>
+</Ingredient>
+
+<Ingredient>
+<amount>0.25</amount>
+<unit>Cup</unit>
+<name>Vegetable Oil</name>
+</Ingredient>
+
+<Ingredient>
+<amount>0.25</amount>
+<unit>Cup</unit>
+<name>Self-Rising Flour</name>
+</Ingredient>
+
+<Instruction>Preheat oven to 325° F. Using medium speed, mix sugar and vegetable oil until smooth.</Instruction>
+<Instruction>Add eggs one at a time, mixing thoroughly after each addition.</Instruction>
+<Instruction>In a small bowl mix flour and spices together, then add to mixture and mix until smooth.</Instruction>
+<Instruction>Mix pumpkin with the mixture until thoroughly mixed.</Instruction>
+<Instruction>In a separate bowl mix raisins and nuts with the ¼ cup of vegetable oil and the ¼ cup of flour until thoroughly mixed.</Instruction>
+<Instruction>Using low speed add mixture to cake batter.</Instruction>
+<Instruction>Pour into 3 greased and paper lined 9” cake pans.</Instruction>
+<Instruction>Bake for 30 to 35 minutes or until fully cooked.</Instruction>
+</Recipe>
+
 </RecipeBox>
