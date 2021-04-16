@@ -30,7 +30,18 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JList;
 import javax.swing.filechooser.FileFilter;
-
+/**
+ * @author Jacob Vaught
+ * @professor William Sims
+ * @DueDate 04/14/2021
+ * @version 2.02 04.14.2021
+ * v1.20 changed color of GUI
+ * v2.01 Added file opener
+ * v2.02 added clickable list to open recipes
+ * TODO add comments
+ * TODO add java docs
+ * Copyright(c) 2021 Jacob C. Vaught. All rights reserved.
+ */
 public class CookBookGUI extends JFrame {
 
 	private static final long serialVersionUID = 1L;

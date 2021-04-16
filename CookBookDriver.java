@@ -1,10 +1,18 @@
 package edu.mtc.egr283.project07;
 
+import java.io.File;
+
 import javax.swing.JOptionPane;
 
 /**
- * @author Doran and Remy
- *
+ * @author Jacob Vaught
+ * @professor William Sims
+ * @DueDate 04/14/2021
+ * @version 1.21 04.14.2021
+ * changed from using name to find recipe to using int location
+ * TODO add comments
+ * TODO add java doc
+ * Copyright(c) 2021 Jacob C. Vaught. All rights reserved.
  */
 public class CookBookDriver {
 	CookBook cookbook;
@@ -40,6 +48,8 @@ public class CookBookDriver {
 	
 	public void starter() {
 		cookbook = new CookBook();
+		File fil = new File("XMLFile.xml");
+		cookbook = CookBookFile.read(fil);
 		int option;
 		do {
 			option = this.promptUserInput();
@@ -67,6 +77,8 @@ public class CookBookDriver {
 			}// Ending bracket of switch
 		}while(option != 9); 
 		JOptionPane.showMessageDialog(null,"Thank you for using the Recipe Box Application","Good Bye", JOptionPane.WARNING_MESSAGE);
+		File saveFile = new File("XMLFileOutput.xml");//USE for checking purposes only
+		CookBookFile.write(saveFile, cookbook);
 		System.exit(0);
 	}// Ending bracket of method main
 	
@@ -136,13 +148,13 @@ public class CookBookDriver {
 	}
 
 	private void displayIngredients() {
-		String units = JOptionPane.showInputDialog("Name of Recipe to view");
-		JOptionPane.showMessageDialog(null, cookbook.findRecipe(units).displayIngredients());
+		int location = Integer.parseInt(JOptionPane.showInputDialog("What is the location of the recipe?"));
+		JOptionPane.showMessageDialog(null, cookbook.getRecipe(location-1).displayIngredients());
 	}
 
 	private void displayInstructions() {
-		String units = JOptionPane.showInputDialog("Name of Recipe to view");
-		JOptionPane.showMessageDialog(null, cookbook.findRecipe(units).displayInstructions());
+		int location = Integer.parseInt(JOptionPane.showInputDialog("What is the location of the recipe?"));
+		JOptionPane.showMessageDialog(null, cookbook.getRecipe(location-1).displayInstructions());
 	}
 
 	private RecipeIngredient ingredientInput(String message) {
@@ -159,7 +171,7 @@ public class CookBookDriver {
 
 	private void promptUserInputSubMenu(int location){
 		int tempInt;
-		Recipe tempRecipe = this.cookbook.getRecipe(location);
+		Recipe tempRecipe = this.cookbook.getRecipe(location-1);
 		do {
 			do{
 				tempInt = Integer.parseInt(JOptionPane.showInputDialog(SUBMENU));
@@ -171,14 +183,14 @@ public class CookBookDriver {
 				break;
 			case 2:
 				tempInt = Integer.parseInt(JOptionPane.showInputDialog("Position of new Ingredient"));
-				tempRecipe.addRecipeIngredient(this.ingredientInput(""),tempInt);
+				tempRecipe.addRecipeIngredient(this.ingredientInput(""),tempInt-1);
 				break;
 			case 3:
 				tempRecipe.addRecipeIngredientAtTail(this.ingredientInput(""));
 				break;
 			case 4:
 				tempInt = Integer.parseInt(JOptionPane.showInputDialog("Position of Ingredient to Delete"));
-				tempRecipe.removeRecipeIngredient(tempInt);
+				tempRecipe.removeRecipeIngredient(tempInt-1);
 				break;
 			case 5:
 				JOptionPane.showMessageDialog(null, tempRecipe.displayIngredients());
@@ -188,14 +200,14 @@ public class CookBookDriver {
 				break;
 			case 7:
 				tempInt = Integer.parseInt(JOptionPane.showInputDialog("Position of new Instruction"));
-				tempRecipe.addInstructionAtPosition(this.instructionInput(""),tempInt);
+				tempRecipe.addInstructionAtPosition(this.instructionInput(""),tempInt-1);
 				break;
 			case 8:
 				tempRecipe.addInstructionAtTail(this.instructionInput(""));
 				break;
 			case 9:
 				tempInt = Integer.parseInt(JOptionPane.showInputDialog("Position of Instruction to be Deleted"));
-				tempRecipe.removeInstruction(tempInt);
+				tempRecipe.removeInstruction(tempInt-1);
 				break;
 			case 10:
 				JOptionPane.showMessageDialog(null, tempRecipe.displayInstructions());
@@ -203,7 +215,7 @@ public class CookBookDriver {
 			case 11:
 				break;
 			}//end of switch
-			this.cookbook.updateRecipe(tempRecipe, location);
+			this.cookbook.updateRecipe(tempRecipe, location-1);
 		}while(tempInt!=11);
 	}
 
@@ -216,8 +228,8 @@ public class CookBookDriver {
 	}// Ending bracket of method promptUserInput
 
 	private void remove() {
-		int tempInt =Integer.parseInt(JOptionPane.showInputDialog("Type the name of the recipe to remove"));
-		this.cookbook.deleteRecipe(tempInt);
+		int tempInt =Integer.parseInt(JOptionPane.showInputDialog("Type the Location of the recipe to remove"));
+		this.cookbook.deleteRecipe(tempInt-1);
 	}// Ending bracket of method remove
 
 	private void add(int option) {

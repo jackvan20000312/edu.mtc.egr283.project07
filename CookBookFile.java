@@ -8,6 +8,14 @@ import org.w3c.dom.Node;
 import org.w3c.dom.Element;  
 import java.io.File;
 import java.io.FileWriter;  
+/**
+ * @author Jacob Vaught
+ * @professor William Sims
+ * @DueDate 04/14/2021
+ * @version 1.00 04.12.2021
+ * TODO add java docs
+ * Copyright(c) 2021 Jacob C. Vaught. All rights reserved.
+ */
 public class CookBookFile{  
 	public static CookBook read(File file){  
 		try{   

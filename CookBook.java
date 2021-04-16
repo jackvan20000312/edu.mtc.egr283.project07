@@ -6,7 +6,7 @@ import edu.mtc.egr283.dll.DLL;
  * @author Jacob Vaught
  * @professor William Sims
  * @DueDate 04/14/2021
- * @version 1.02 05.06.2021
+ * @version 1.02 04.06.2021
  * Copyright(c) 2021 Jacob C. Vaught. All rights reserved.
  */
 
